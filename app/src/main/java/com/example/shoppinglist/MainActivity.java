@@ -1,6 +1,7 @@
 package com.example.shoppinglist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         itemsRecyclerView.setAdapter(itemAdapter);
 
         fab = findViewById(R.id.fab_plus);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(itemAdapter));
+        itemTouchHelper.attachToRecyclerView(itemsRecyclerView);
 
         itemList = db.getAllItems();
         Collections.reverse(itemList);
