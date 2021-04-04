@@ -48,7 +48,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
         db = this.getWritableDatabase();
     }
 
-    public void insertTask(ItemModel item)
+    public void insertItem(ItemModel item)
     {
         ContentValues cv = new ContentValues();
         cv.put(ITEM, item.getItem());
