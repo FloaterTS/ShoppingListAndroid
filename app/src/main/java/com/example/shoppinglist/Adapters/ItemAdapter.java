@@ -83,6 +83,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>
         return activity;
     }
 
+    public void deleteItem(int position)
+    {
+        ItemModel item = itemList.get(position);
+        db.deleteItem(item.getId());
+        itemList.remove(position);
+        notifyItemRemoved(position);
+    }
+
     public void editItem(int position)
     {
         ItemModel item = itemList.get(position);

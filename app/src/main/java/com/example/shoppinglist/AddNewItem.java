@@ -111,6 +111,7 @@ public class AddNewItem extends BottomSheetDialogFragment
                     ItemModel item = new ItemModel();
                     item.setItem(text);
                     item.setStatus(0);
+                    db.insertTask(item);
                 }
                 dismiss();
             }
