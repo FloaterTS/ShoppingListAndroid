@@ -5,4 +5,5 @@
     <string name="to_buy_item">Lucru de cumparat</string>
     <string name="add_new_item">Adauga un nou produs</string>
     <string name="add_item">Adauga</string>
+    <string name="intro_splash_image">Intro splash image</string>
 </resources>
