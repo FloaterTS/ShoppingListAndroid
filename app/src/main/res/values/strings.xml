@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ShoppingList</string>
+    <string name="to_buy">De cumparat:</string>
+    <string name="addnewitem">AddNewItem</string>
+    <string name="to_buy_item">Lucru de cumparat</string>
+    <string name="add_new_item">Adauga un nou produs</string>
+    <string name="add_item">Adauga</string>
 </resources>

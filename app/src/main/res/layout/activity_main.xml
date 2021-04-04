@@ -17,7 +17,7 @@
         android:textSize="32sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/toBuyRecyclerView"
+        android:id="@+id/itemsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toBuyText"
