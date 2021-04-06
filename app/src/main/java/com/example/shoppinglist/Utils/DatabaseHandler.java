@@ -82,19 +82,19 @@ public class DatabaseHandler extends SQLiteOpenHelper
     {
         ContentValues cv = new ContentValues();
         cv.put(STATUS, status);
-        db.update(ITEM_TABLE, cv, ID + "=?", new String[] {String.valueOf(id)});
+        db.update(ITEM_TABLE, cv, ID + "= ?", new String[] {String.valueOf(id)});
     }
 
     public void updateItem(int id, String item)
     {
         ContentValues cv = new ContentValues();
         cv.put(ITEM, item);
-        db.update(ITEM_TABLE, cv, ID + "=?", new String[] {String.valueOf(id)});
+        db.update(ITEM_TABLE, cv, ID + "= ?", new String[] {String.valueOf(id)});
     }
 
     public void deleteItem(int id)
     {
-        db.delete(ITEM_TABLE, ID + "=?", new String[] {String.valueOf(id)});
+        db.delete(ITEM_TABLE, ID + "= ?", new String[] {String.valueOf(id)});
     }
 
 }

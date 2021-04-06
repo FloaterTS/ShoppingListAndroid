@@ -98,6 +98,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>
         bundle.putInt("id", item.getId());
         bundle.putString("item", item.getItem());
         AddNewItem fragment = new AddNewItem();
+        fragment.setArguments(bundle);
         fragment.show(activity.getSupportFragmentManager(), AddNewItem.TAG);
     }
 

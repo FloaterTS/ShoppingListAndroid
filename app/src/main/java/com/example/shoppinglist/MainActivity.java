@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         db = new DatabaseHandler(this);
         db.openDatabase();
 
-        itemList = new ArrayList<>();
-
         itemsRecyclerView = findViewById(R.id.itemsRecyclerView);
         itemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemAdapter = new ItemAdapter(db, this);
@@ -73,5 +71,3 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         itemAdapter.notifyDataSetChanged();
     }
 }
-
-//github commit test

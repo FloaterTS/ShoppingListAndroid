@@ -51,25 +51,32 @@ public class AddNewItem extends BottomSheetDialogFragment
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
-    {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         newItemText = Objects.requireNonNull(getView()).findViewById(R.id.newItemText);
         newItemSaveButton = getView().findViewById(R.id.newItemButton);
 
-        db = new DatabaseHandler(getActivity());
-        db.openDatabase();
-
         boolean isUpdate = false;
+
+        newItemSaveButton.setEnabled(false);
+        newItemSaveButton.setTextColor(Color.GRAY);
+
         final Bundle bundle = getArguments();
-        if(bundle != null)
-        {
+        if(bundle != null){
             isUpdate = true;
             String item = bundle.getString("item");
             newItemText.setText(item);
+            assert item != null;
             if(item.length() > 0)
+            {
+                newItemSaveButton.setEnabled(true);
                 newItemSaveButton.setTextColor(ContextCompat.getColor(Objects.requireNonNull(getContext()), R.color.colorPrimaryDark));
+            }
         }
+
+        db = new DatabaseHandler(getActivity());
+        db.openDatabase();
+
         newItemText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
