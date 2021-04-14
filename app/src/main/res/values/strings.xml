@@ -6,4 +6,8 @@
     <string name="add_new_item">Adauga un nou produs</string>
     <string name="add_item">Adauga</string>
     <string name="intro_splash_image">Intro splash image</string>
+    <string name="title_activity_bottom_nav">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_shopping_list">Cos cumparaturi</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

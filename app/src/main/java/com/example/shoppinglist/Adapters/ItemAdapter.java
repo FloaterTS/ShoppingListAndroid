@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shoppinglist.AddNewItem;
-import com.example.shoppinglist.MainActivity;
+import com.example.shoppinglist.BottomNavActivity;
 import com.example.shoppinglist.Models.ItemModel;
 import com.example.shoppinglist.R;
 import com.example.shoppinglist.Utils.DatabaseHandler;
@@ -22,10 +22,10 @@ import java.util.List;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>
 {
     private List<ItemModel> itemList;
-    private MainActivity activity;
+    private BottomNavActivity activity;
     private DatabaseHandler db;
 
-    public ItemAdapter(DatabaseHandler db, MainActivity activity)
+    public ItemAdapter(DatabaseHandler db, BottomNavActivity activity)
     {
         this.db = db;
         this.activity = activity;
