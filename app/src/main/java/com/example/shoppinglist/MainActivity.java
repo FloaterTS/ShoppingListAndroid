@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
                 long timeAtButtonClick = System.currentTimeMillis();
 
-                long tenMinutesInMillis = 1000 * 10;
+                long tenMinutesInMillis = 1000 * 60 * 10;
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenMinutesInMillis, pendingIntent);
             }
