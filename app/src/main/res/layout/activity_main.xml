@@ -32,7 +32,6 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="32dp"
         android:backgroundTint="@android:color/holo_green_dark"
-        app:tint="@color/white"
         android:src="@drawable/ic_baseline_add"
         android:contentDescription="@string/addnewitem" />
 

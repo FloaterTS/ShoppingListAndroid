@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         if(getSupportActionBar() != null)
             getSupportActionBar().hide();
 
-        final Intent delayMainActivityIntent = new Intent(SplashActivity.this, BottomNavActivity.class);
+        final Intent delayMainActivityIntent = new Intent(SplashActivity.this, MainActivity.class);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
