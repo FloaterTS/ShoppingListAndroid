@@ -6,4 +6,8 @@
     <string name="add_new_item">Adauga un nou produs</string>
     <string name="add_item">Adauga</string>
     <string name="intro_splash_image">Intro splash image</string>
+    <string name="remind_me_10min">Aminteste-mi in 10 minute</string>
+    <string name="notification_title">Nu uita!</string>
+    <string name="notification_text">"Verifica lista de cumparaturi si vezi ce iti lipseste"</string>
+    <string name="notifcation_set_toast">Reminder setat!</string>
 </resources>

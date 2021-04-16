@@ -5,9 +5,17 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.shoppinglist.Adapters.ItemAdapter;
 import com.example.shoppinglist.Models.ItemModel;
@@ -20,10 +28,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements DialogCloseListener
 {
-    private RecyclerView itemsRecyclerView;
     private ItemAdapter itemAdapter;
-    private FloatingActionButton fab;
-
     private List<ItemModel> itemList;
     private DatabaseHandler db;
 
@@ -32,18 +37,42 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Hiding the top bar
         if(getSupportActionBar() != null)
             getSupportActionBar().hide();
+
+        //Notification in 10 Min Button
+        createNotificationChannel();
+        Button remindButton = findViewById(R.id.remind_button);
+        remindButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getBaseContext(), getResources().getString(R.string.notifcation_set_toast), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MainActivity.this, ReminderBroadcast.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                long timeAtButtonClick = System.currentTimeMillis();
+
+                long tenMinutesInMillis = 1000 * 10;
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenMinutesInMillis, pendingIntent);
+            }
+        });
 
         db = new DatabaseHandler(this);
         db.openDatabase();
 
-        itemsRecyclerView = findViewById(R.id.itemsRecyclerView);
+        RecyclerView itemsRecyclerView = findViewById(R.id.itemsRecyclerView);
         itemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemAdapter = new ItemAdapter(db, this);
         itemsRecyclerView.setAdapter(itemAdapter);
 
-        fab = findViewById(R.id.fab_plus);
+        FloatingActionButton fab = findViewById(R.id.fab_plus);
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(itemAdapter));
         itemTouchHelper.attachToRecyclerView(itemsRecyclerView);
@@ -69,5 +98,20 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         Collections.reverse(itemList);
         itemAdapter.setItems(itemList);
         itemAdapter.notifyDataSetChanged();
+    }
+
+    private void createNotificationChannel()
+    {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            CharSequence name = "ReminderChannel";
+            String description = "Channel for Reminder";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyRemind", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
