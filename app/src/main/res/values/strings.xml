@@ -10,4 +10,10 @@
     <string name="notification_title">Nu uita!</string>
     <string name="notification_text">"Verifica lista de cumparaturi si vezi ce iti lipseste"</string>
     <string name="notifcation_set_toast">Reminder setat!</string>
+    <string name="home">Home</string>
+    <string name="lista">Lista</string>
+    <string name="info">Info</string>
+    <string name="your_shopping_app">Your Shopping App</string>
+
+
 </resources>
