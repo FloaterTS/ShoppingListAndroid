@@ -12,7 +12,8 @@
     <string name="home">Home</string>
     <string name="lista">Lista</string>
     <string name="info">Info</string>
-    <string name="your_shopping_app">Your Shopping App</string>
+    <string name="your_shopping_app">Lista ta de cumparaturi</string>
+    <string name="bine_ai_venit">Bine ai venit!</string>
 
 
 </resources>
