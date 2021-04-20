@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="De cumparat:"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingList">
@@ -21,7 +21,8 @@
 
         <receiver android:name=".ReminderBroadcast" />
 
-       <activity android:name=".MainActivity"/>
+       <activity android:name=".MainActivity"
+           android:parentActivityName=".MenuActivity"/>
     </application>
 
 </manifest>

@@ -4,26 +4,12 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/toBuyText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="@string/to_buy"
-        android:textColor="@color/black"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="32sp"/>
-
 
     <Button
         android:id="@+id/remind_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_toEndOf="@id/toBuyText"
+        android:layout_margin="16dp"
         android:text="@string/remind_me_10min"
         android:textSize="12sp"
         android:backgroundTint="@android:color/holo_green_dark"/>
@@ -32,7 +18,7 @@
         android:id="@+id/itemsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toBuyText"
+        android:layout_below="@id/remind_button"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:nestedScrollingEnabled="true"/>
 
