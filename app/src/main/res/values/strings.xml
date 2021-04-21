@@ -14,6 +14,8 @@
     <string name="info">Info</string>
     <string name="your_shopping_app">Lista ta de cumparaturi</string>
     <string name="bine_ai_venit">Bine ai venit!</string>
+    <string name="your_shoppinglist_app">Your ShoppingList App</string>
+    <string name="version_1_0">Version 1.0</string>
 
 
 </resources>

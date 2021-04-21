@@ -11,5 +11,34 @@
         android:layout_centerInParent="true"
         android:contentDescription="@string/intro_splash_image" />
 
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Panel"
+        android:layout_width="377dp"
+        android:layout_height="73dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="501dp"
+        android:gravity="center"
+        android:text="@string/your_shoppinglist_app"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="99dp"
+        android:layout_height="37dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="73dp"
+        android:gravity="center"
+        android:text="@string/version_1_0"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
 
 </RelativeLayout>

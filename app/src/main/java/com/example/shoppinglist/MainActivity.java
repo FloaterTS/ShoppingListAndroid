@@ -31,15 +31,12 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
     private ItemAdapter itemAdapter;
     private List<ItemModel> itemList;
     private DatabaseHandler db;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Hiding the top bar
-        if(getSupportActionBar() != null)
-            getSupportActionBar().hide();
 
         //Notification in 10 Min Button
         createNotificationChannel();
